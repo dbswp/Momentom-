@@ -1,8 +1,8 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
-
-const toDos = [];
+const TODOS_KEY = "todos";
+let toDos = [];
 
 function saveToDos() {
   localStorage.setItem("todos", JSON.stringify(toDos));
@@ -17,8 +17,9 @@ function deleteTodo(event) {
 // 입력받은 텍스트 값을 index.html에 넣어주기
 function paintTodo(newTodo) {
   const li = document.createElement("li");
+  li.id = newTodo.id;
   const span = document.createElement("span");
-  span.innerText = newTodo;
+  span.innerText = newTodo.text;
   const button = document.createElement("button");
   button.innerText = "❌";
   button.addEventListener("click", deleteTodo);
@@ -33,9 +34,22 @@ function handleToDoSubmit(event) {
   const newTodo = toDoInput.value;
   // newTodo는 value값을 ""처리했다고 해서 빈 값이 아님
   toDoInput.value = "";
-  toDos.push(newTodo);
-  paintTodo(newTodo);
+  const newTodoObj = {
+    text: newTodo,
+    id: Date.now(),
+  };
+  toDos.push(newTodoObj);
+  paintTodo(newTodoObj);
   saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if (savedToDos !== null) {
+  const parsedToDos = JSON.parse(savedToDos);
+  toDos = parsedToDos;
+  parsedToDos.forEach(paintTodo);
+  // forEach는 array의 각 item에 대해 함수를 실행하게 해준다
+}
