@@ -53,3 +53,8 @@ if (savedToDos !== null) {
   parsedToDos.forEach(paintTodo);
   // forEach는 array의 각 item에 대해 함수를 실행하게 해준다
 }
+
+// deleting to Dos part
+function sexyFilter(item) {
+  return item !== 3;
+}
