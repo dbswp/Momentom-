@@ -5,6 +5,7 @@ const TODOS_KEY = "todos";
 let toDos = [];
 
 function saveToDos() {
+  // toDos array를 locarstorage에 저장
   localStorage.setItem("todos", JSON.stringify(toDos));
 }
 
@@ -20,10 +21,13 @@ function deleteTodo(event) {
 function paintTodo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.id;
+
   const span = document.createElement("span");
   span.innerText = newTodo.text;
+
   const button = document.createElement("button");
   button.innerText = "❌";
+
   button.addEventListener("click", deleteTodo);
   li.appendChild(span);
   li.appendChild(button);
@@ -54,9 +58,4 @@ if (savedToDos !== null) {
   toDos = parsedToDos;
   parsedToDos.forEach(paintTodo);
   // forEach는 array의 각 item에 대해 함수를 실행하게 해준다
-}
-
-// deleting to Dos part
-function sexyFilter(item) {
-  return item !== 3;
 }
