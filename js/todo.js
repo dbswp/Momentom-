@@ -12,6 +12,8 @@ function saveToDos() {
 function deleteTodo(event) {
   const li = event.target.parentElement;
   li.remove();
+  toDos = toDos.filter((toDo) => toDo.id != parse(li.id));
+  saveToDos();
 }
 
 // 입력받은 텍스트 값을 index.html에 넣어주기
