@@ -2,3 +2,154 @@
   display: none;
 }
 /*Javascript에서 className 부여로 요소를 숨기기 위함*/
+
+body {
+}
+/* 배경이미지 */
+img {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  opacity: 0.8;
+  animation: fadeIn 0.5s linear;
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.container .contanier__content {
+  width: 50%;
+  height: 80%;
+  margin: 0 auto;
+}
+.container .contanier__content .content__main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* clock 부분 css */
+.container .contanier__content .content__main .content__main__clock {
+  font-size: 6em;
+  color: white;
+  margin: 15% 0 15% 0;
+  display: flex;
+  justify-content: center;
+}
+/* login-form 부분 */
+.container .contanier__content .content__main .content__main__loginFrom {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 5%;
+}
+.container .contanier__content .content__main .content__main__loginFrom h1 {
+  font-size: 2em;
+}
+.container .contanier__content .content__main .content__main__loginFrom input {
+  width: 160px;
+  height: 30px;
+  font-size: 16px;
+  padding: 0 10px;
+  border: none;
+  color: white;
+  text-align: center;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+}
+.container
+  .contanier__content
+  .content__main
+  .content__main__loginFrom
+  input:hover {
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+  border: none;
+  border-bottom: 2px solid white;
+}
+.container .contanier__content .content__main .content__main__loginFrom button {
+  margin: 0 15px;
+  height: 31px;
+  border: none;
+  background-color: tomato;
+  color: white;
+}
+
+/* todolist 부분 */
+.container .contanier__content .content__main .content__main__todoList {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.container .contanier__content .content__main .content__main__todoList input {
+  width: 263px;
+  height: 32px;
+  font-size: 16px;
+  padding: 0 10px;
+  margin-bottom: 10%;
+  border: none;
+  color: white;
+  text-align: center;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+}
+.container
+  .contanier__content
+  .content__main
+  .content__main__todoList
+  input:hover {
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+  border: none;
+  border-bottom: 2px solid white;
+}
+.container
+  .contanier__content
+  .content__main
+  .content__main__todoList
+  .todoList-ul-box {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+.container
+  .contanier__content
+  .content__main
+  .content__main__todoList
+  .todoList-ul-box:hover {
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+}
+.container .contanier__content .content__main .content__main__todoList ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+  line-height: 32px;
+  border-bottom: 1px solid #4a4a4a;
+  font-size: 16px;
+  width: 250px;
+}
+.container
+  .contanier__content
+  .content__main
+  .content__main__todoList
+  ul
+  li
+  button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.container .contanier__content .conetent__quote {
+}

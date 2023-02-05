@@ -4,32 +4,54 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="
+        https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css
+        "
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Momentom</title>
   </head>
   <body>
-    <h2 id="clock">00:00:00</h2>
-    <form class="hidden" id="login-form">
-      <input
-        required
-        maxlength="10"
-        type="text"
-        placeholder="what is your name?"
-      />
-      <button>Log in</button>
-    </form>
-    <h1 id="greeting" class="hidden"></h1>
-    <form id="todo-form">
-      <input type="text" placeholder="Write a To Do and Press Enter" />
-    </form>
-    <ul id="todo-list"></ul>
-    <div id="quote">
-      <span></span>
-      <span></span>
-    </div>
-    <div id="weather">
-      <span></span>
-      <span></span>
+    <div class="container">
+      <div class="contanier__content">
+        <div class="content__main">
+          <div class="content__main__clock content__main__box">
+            <h2 id="clock">00:00:00</h2>
+          </div>
+          <div class="content__main__loginFrom content__main__box">
+            <form class="hidden" id="login-form">
+              <input
+                required
+                maxlength="10"
+                type="text"
+                placeholder="User name"
+              />
+              <button>Log in</button>
+            </form>
+            <h1 id="greeting" class="hidden"></h1>
+          </div>
+          <div class="content__main__todoList content__main__box">
+            <form id="todo-form">
+              <input type="text" placeholder="What's today's To Do" />
+            </form>
+            <div class="todoList-ul-box">
+              <ul id="todo-list"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="conetent__quote">
+          <div id="quote">
+            <span></span><br />
+            <span>< /span>
+          </div>
+        </div>
+      </div>
+      <!-- <div id="weather">
+        <span></span>
+        <span></span>
+      </div> -->
     </div>
     <script src="./js/greeting.js"></script>
     <script src="./js/clock.js"></script>
